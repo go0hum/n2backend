@@ -24,3 +24,14 @@ for test use
 ./vendor/bin/phpunit
 ```
 
+The user for test is:
+
+```
+Admin:
+user: admin
+pass: admin
+
+Normal user:
+user: pepe
+pass: pepe
+```
