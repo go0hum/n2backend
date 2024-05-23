@@ -3,7 +3,7 @@
     "description": "Service of the calculator",
     "type": "project",
     "require": {
-        "php": "^8.3",
+        "php": "^8.2",
         "firebase/php-jwt": "^6.10"
     },
     "require-dev": {

@@ -14,7 +14,5 @@ function Json($code, $status, $message, $errorCode=false, $rows=false)
     }
     echo json_encode($data);
     
-    if (getenv('APP_ENV') === 'production') {
-        exit;
-    }
+    exit;
 }
