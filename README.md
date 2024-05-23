@@ -47,3 +47,68 @@ Normal user:
 user: pepe
 pass: pepe
 ```
+
+
+For use de API is:
+
+
+https://api.zooxial.com/api/v1/?action=addition
+
+actions:
+
+* addition
+
+payload:
+
+```
+{
+    "a": 5,
+    "b": 100
+}
+```
+
+* substraction
+
+payload:
+
+```
+{
+    "a": 5,
+    "b": 100
+}
+```
+
+* multiplication
+
+payload:
+
+```
+{
+    "a": 5,
+    "b": 100
+}
+```
+
+* division
+
+payload:
+
+```
+{
+    "a": 5,
+    "b": 100
+}
+```
+
+* square_root
+
+payload:
+
+```
+{
+    "a": 5
+}
+```
+
+* random_string
+
