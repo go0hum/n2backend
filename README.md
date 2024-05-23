@@ -51,7 +51,6 @@ pass: pepe
 
 For use de API is:
 
-
 https://api.zooxial.com/api/v1/?action=addition
 
 actions:
@@ -112,3 +111,14 @@ payload:
 
 * random_string
 
+Example:
+
+```
+curl --location --request GET 'https://api.zooxial.com/api/v1/?action=addition' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwidXNlcl9pZCI6MSwiaWF0IjoxNzE2NDY0NjY4LCJleHAiOjE3MTY0NjgyNjh9.oBMr6ySjReGzMYLi9ChYm8FNhz2m2brHghRPQv1Neh4' \
+--header 'Content-Type: application/json' \
+--data '{
+    "a": 5,
+    "b": 100
+}'
+```
