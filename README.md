@@ -18,6 +18,18 @@ docker exec -it container bash
 composer install
 ```
 
+later is important to change db file in 
+
+```
+src/core/db
+$host = 'db';
+$db   = 'service';
+$user = 'cancun';
+$pass = 'cancun#';
+$charset = 'utf8mb4';
+```
+
+
 for test use
 
 ```
