@@ -14,7 +14,7 @@ class OperationHandler
 
     public function __construct() {
         $this->operations['addition'] = new Addition();
-        $this->operations['substraction'] = new Subtraction();
+        $this->operations['subtraction'] = new Subtraction();
         $this->operations['multiplication'] = new Multiplication();
         $this->operations['division'] = new Division();
         $this->operations['square_root'] = new SquareRoot();

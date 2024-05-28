@@ -1,5 +1,9 @@
 # Backend N2
 
+## REQUIREMENTS
+
+- [Docker](https://www.docker.com/products/docker-desktop/)
+
 ## INSTALL
 
 First install docker
@@ -8,13 +12,14 @@ First install docker
 docker-compose up -d
 ```
 
-Copy database sql file in the database
-the folder is /database/start.sql
+Copy and paste the database sql file in the database client 
+the folder is /database/start.sql or import the sql file
 
-Later download vendor in docker 
+Later download vendor in docker with the command
 
 ```
 docker exec -it container bash
+// later
 composer install
 ```
 
@@ -29,14 +34,14 @@ $pass = 'cancun#';
 $charset = 'utf8mb4';
 ```
 
-
-for test use
+for test use in docker 
 
 ```
+docker exec -it container bash
 ./vendor/bin/phpunit
 ```
 
-The user for test is:
+The user for test web is:
 
 ```
 Admin:
@@ -121,4 +126,12 @@ curl --location --request GET 'https://api.zooxial.com/api/v1/?action=addition' 
     "a": 5,
     "b": 100
 }'
+```
+
+## VIEW THE SITE
+
+For see the site is the url 
+
+```
+http://localhost:8006
 ```

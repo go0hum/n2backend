@@ -12,7 +12,7 @@ require_once dirname(__DIR__).'/../api/v1/OperationHandler.php';
 $authorization = new Authorization();
 $authorization->init();
 
-if ($method === 'GET' && isset($_GET['action'])) {
+if ($method === 'POST' && isset($_GET['action'])) {
 
     $action = $_GET['action'] ?? null;
 
@@ -28,7 +28,11 @@ if ($method === 'GET' && isset($_GET['action'])) {
         $cost = ($OperationData['cost'] * -1);
         $operationId = $OperationData['id'];
         $RecordData = (new Record())->getAllByOperationIdAndUserId($operationId, $userJWT->user_id);
-        $descount = $cost + $RecordData['user_balance'];
+        if ($RecordData) {
+            $descount = $cost + $RecordData['user_balance'];
+        } else {
+            $descount = $cost;
+        }
         if ($descount < 0) {
             Json(400, "error", $textApi[$lang]['the_users_balance_isnt_enough'], "REQUEST_COST");
         }
@@ -36,7 +40,7 @@ if ($method === 'GET' && isset($_GET['action'])) {
         $result = (new OperationHandler())->handle(strtolower(trim($action)), $params);
         (new Record())->insertAll($operationId, $userJWT->user_id, $cost, $descount, json_encode(["data" => $result]));
 
-        if ($result != false){
+        if ($result !== false){
             Json(200, "success", $textApi[$lang]['operation_completed_successfully'], false, ["data" => $result]);
         } else {
             Json(400, "error", $textApi[$lang]['action_not_found'], "MISSING_ACTION");

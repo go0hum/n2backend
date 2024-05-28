@@ -1,5 +1,6 @@
 <?php
-function getDbConnection() {
+function getDbConnection() 
+{
     $host = 'db';
     $db   = 'service';
     $user = 'cancun';
